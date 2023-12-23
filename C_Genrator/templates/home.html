@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Certificate Generator{% endblock %}
+
+{% block header %}Certificate Generator{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mb-4">Certificate Verification</h1>
+  <form id="verificationForm">
+    <div class="form-group">
+      <label for="certificateId">Certificate ID:</label>
+      <input type="text" class="form-control" id="certificateId" name="certificateId" required>
+    </div>
+
+    <button type="button" class="btn btn-primary" onclick="verifyCertificate()">Verify</button>
+  </form>
+</div>
+
+<script>
+  function verifyCertificate() {
+      var certificateId = document.getElementById('certificateId').value;
+
+      // Make an AJAX request to the verification URL
+      fetch('/verify-certificate/' + certificateId + '/')
+          .then(response => {
+              if (response.ok) {
+                  return response.json();
+              } else {
+                  throw new Error(response.statusText);
+              }
+          })
+          .then(data => {
+              // Handle the verification result as needed
+              alert(data.message);
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              alert('Certificate not found or invalid.');
+          });
+  }
+</script>
+{% endblock %}

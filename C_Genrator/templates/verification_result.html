@@ -1,0 +1,18 @@
+<!-- verification_result.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Certificate Verification Result{% endblock %}
+
+{% block header %}Certificate Verification Result{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if certificate %}
+        <p>Certificate with Unique ID "{{ certificate.unique_id }}" is valid.</p>
+        <!-- Display other certificate details as needed -->
+    {% else %}
+        <p>Certificate not found or invalid.</p>
+    {% endif %}
+</div>
+{% endblock %}

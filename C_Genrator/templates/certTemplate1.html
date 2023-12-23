@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Template</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="..." crossorigin="anonymous">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .certificate-container {
+      position: relative;
+      max-width: 800px;
+      width: 100%;
+      background-color: #ffffff; /* Add a white background for the certificate */
+      border: 1px solid #dee2e6; /* Add a border for better visibility */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    }
+
+    .certificate-background {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .certificate-details {
+      position: absolute;
+      
+      top: 44%;
+      left: 48%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #000000;
+    }
+
+    .common-text {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .recipient-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .course-name {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .completion-date {
+      width: 200px; 
+      height: z0px;
+      font-size: 18px;
+      margin-bottom: 30px;
+      position: absolute;
+    top: 130%;
+    left: 60%;
+      
+    }
+
+    .btn-container {
+    padding: 10px; /* Add padding to the container */
+    text-align: center; /* Center the content */}
+    .btn {
+      align-items: end;
+      margin-right: 10px;
+    }
+    footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+}
+  </style>
+</head>
+<body>
+  <div class="certificate-container">
+    <img class="certificate-background" src="{%static 'images/certificate1.jpg' %}"" alt="Certificate Background">
+    <br><br>
+    <div class="certificate-details">
+      <div class="common-text"> of Achievement</div>
+      
+      <div > This is to certify that</div>
+      <div class="recipient-name">{{ recipient_name }}</div>
+      <div > has successfully achieved</div>
+      
+      <div class="course-name">{{ course_name }}</div>
+      <div class="completion-date"><strong>{{ completion_date }}</strong></div>
+
+      <div class="unique_id">{{ unique_id }}</div>
+    </div>
+  </div>
+      <footer>
+        <div class="btn-container">
+          <!-- <a href="generate-certificate/" class="btn btn-primary">Back</a> -->
+          <button class="btn btn-secondary" onclick="window.print()">Print</button>
+        </div>
+      </footer>
+      
+    
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
+</body>
+</html>

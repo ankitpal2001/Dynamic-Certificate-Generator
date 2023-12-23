@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="..." crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Arial', sans-serif;
+    }
+    .certificate-container {
+      margin: 20px;
+      padding: 30px;
+      border: 2px solid #007bff;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .certificate-header {
+      text-align: center;
+    }
+    .certificate-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .certificate-details {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .certificate-footer {
+      text-align: right;
+    }
+    .certificate-signature {
+      margin-top: 40px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+  <title>Certificate</title>
+</head>
+<body>
+  <div class="container certificate-container">
+    <div class="certificate-header">
+      <h2 class="certificate-title">Certificate of Completion</h2>
+    </div>
+    <div class="certificate-details">
+      <p>This is to certify that</p>
+      <p><strong>{{ recipient_name }}</strong></p>
+      <p>has successfully completed the course</p>
+      <p><strong>{{ course_name }}</strong></p>
+      <p>on</p>
+      <p><strong>{{ completion_date }}</strong></p>
+    </div>
+    <div class="certificate-footer">
+      <p class="certificate-signature">Authorized Signature</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
+</body>
+</html>
